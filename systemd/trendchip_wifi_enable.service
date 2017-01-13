@@ -1,0 +1,9 @@
+[Unit]                                                                                         
+Description=trendchip_wifi_manager.py - Wi-Fi enabler                                                                           
+                                                                                               
+[Service]                                                                                      
+Type=oneshot                                                                                    
+ExecStart=/opt/wifi_scripts/trendchip_wifi_manager.py -e                                                                                                                                            
+                                                                                               
+[Install]                                                                                      
+WantedBy=default.target

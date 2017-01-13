@@ -1,0 +1,9 @@
+[Unit]
+Description=trendchip_wifi_manager.py - Wi-Fi enabler - 6:30 AM schedule
+
+[Timer]
+OnCalendar=*-*-* 6:30:00
+Persistent=false
+
+[Install]
+WantedBy=timers.target
