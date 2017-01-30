@@ -1,5 +1,5 @@
 # trendchip_wifi_manager.py
-trendchip_wifi_manager.py is a simple Python3 script concieved for turnining on and off the Wi-Fi module of a Trendchip based access pointm without any user interaction.
+trendchip_wifi_manager.py is a simple Python3 script concieved for turning on and off the Wi-Fi module of a Trendchip based access pointm without any user interaction.
 
 #### Why?
 Usually, Trendchip based access points don't have any internal scheduling, so I wrote my own. :P
@@ -41,7 +41,7 @@ password = admin
 
 Now it's the time to edit and install the Systemd related files.
 
-You have to edit both unit files in order to point the correct path to the script in your drive, then you can copy and enable the units.
+You have to edit both unit files in order to point the correct path to the script in your drive, then you can copy the units.
 
 ```sh
 $ cd systemd
@@ -50,11 +50,9 @@ ExecStart=/opt/wifi_scripts/trendchip_wifi_manager.py -e
 $ nano trendchip_wifi_disable.service
 ExecStart=/opt/wifi_scripts/trendchip_wifi_manager.py -d
 $ sudo cp * /etc/systemd/system
-$ sudo systemctl enable trendchip_wifi_enable.service
-$ sudo systemctl enable trendchip_wifi_disable.service
 ```
 
-Last but not least thing is to edit, install and activate the timers, same as as before.
+Last but not least thing is to edit, install and activate the timers.
 
 For more information about OnCalendar syntax see [systemd.time(7)](http://man7.org/linux/man-pages/man7/systemd.time.7.html).
 ```sh
@@ -62,9 +60,7 @@ $ nano trendchip_wifi_enable.timer
 OnCalendar=*-*-* 6:30:00
 $ nano trendchip_wifi_disable.timer
 OnCalendar=*-*-* 1:00:00
-$ sudo systemctl enable wifi_enable.timer
 $ sudo systemctl start wifi_enable.timer
-$ sudo systemctl enable wifi_disable.timer
 $ sudo systemctl start wifi_disable.timer
 ```
 
