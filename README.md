@@ -6,7 +6,7 @@
 
 ## What's it?
 
-Usually, Trendchip based access points don't have any internal scheduling, so I wrote my own :kissing_heart:
+Usually, Trendchip-based access points don't have any internal scheduling, so I wrote my own :kissing_heart:
 
 You should consider pairing it with a _job scheduler_, in order to automate the process even more.
 
@@ -29,15 +29,15 @@ or if your _access point_ address is different from the default one (`192.168.1.
 ## Requirements
 You need an always-on server **connected via Ethernet** that will run the script, such as a Raspberry Pi or anything running GNU/Linux on it.
 
-As far as I know, various TP-LINK (such as my TD-W8951ND and TD-W8151N) and Techmade routers/access points are compatible with the script. If you had the chance to try it out on some other devices, let me know through a PR. 
+As far as I know, various TP-LINK (such as my TD-W8951ND and TD-W8151N) and Techmade routers/access points are compatible with the script. If you had the chance to try it out on some other devices, let me know through a PR.
 
-Usually, if the web interface is like this, it's likely that the script works just fine.
+Usually, if the web interface is like this, it's likely that the script will work just fine:
 
 ![Trendchip web interface](https://s26.postimg.org/np6j5m0e1/Screenshot_20170113_170705.png)
 
 ## Usage
 
-First, check if you need to tweak some configuration option in order to make the script work:
+First, check if you need to tweak some configuration options, in order to make the script work:
 
 ```sh
 $ nano trendchip_wifi_manager.py
@@ -47,7 +47,7 @@ password = admin
 ...
 ```
 
-If you're on _systemd_, it's now time to install the systemd related files: you have to edit the unit files, in order to point to the correct script's path.
+If you're on _systemd_: you have to edit the unit files, in order to point to the correct script path:
 
 ```sh
 $ cd systemd
@@ -68,6 +68,7 @@ OnCalendar=*-*-* 1:00:00
 ```
 
 Finally, you have to install the unit files and activate the timers.
+
 ```sh
 $ sudo cp * /etc/systemd/system
 $ sudo systemctl daemon-reload
