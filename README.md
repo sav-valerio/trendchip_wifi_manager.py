@@ -33,7 +33,7 @@ As far as I know, various TP-LINK (such as my TD-W8951ND and TD-W8151N) and Tech
 
 Usually, if the web interface is like this, it's likely that the script will work just fine:
 
-![Trendchip web interface](https://s26.postimg.org/np6j5m0e1/Screenshot_20170113_170705.png)
+![Trendchip web interface](https://raw.githubusercontent.com/sav-valerio/trendchip_wifi_manager.py/master/web_interface.jpg)
 
 ## Usage
 
